@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    background-color:black;
+    background-image: url("https://e1.pxfuel.com/desktop-wallpaper/152/32/desktop-wallpaper-best-4-restaurant-backgrounds-on-hip-italian-food.jpg");
+    background-size: cover; 
+    background-position: left center; 
+    background-attachment: fixed; 
+}

@@ -1,0 +1,35 @@
+
+<div   class="container">
+    <h1 > Log in </h1>
+    <br>
+<form  (submit)="login()">
+    
+   <div class="col-3">
+      <p>Mail:</p>
+      <input type="email" class="form-control mt-1" formControlName="mail" placeholder="mail address">
+    </div>
+  
+   
+    <div class="col-3">
+      <p>Password:</p>
+      <input type="password" class="form-control mt-1" formControlName="password" placeholder="write at least 8 characters">
+    </div>
+  
+    <br>
+  
+
+
+    <a className="forgot" routerLink="/password">
+      Forgot Password ?
+    </a>
+<div class="clearfix">
+  
+  
+   <button type="submit" class="signupbtn">log  in</button> 
+  
+</div>
+<p>Don't have an account? <a routerLink ="/auth">Sign Up</a></p>
+ 
+</form>
+</div> 
+

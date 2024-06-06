@@ -1,0 +1,155 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+}
+
+.container .col-3 {
+  width: 180px;
+  height: 250px;
+  margin: 10px; /* Add margin between image boxes */
+  padding: 20px;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .col-3 img {
+  width: 200px; /* Make the image occupy the full width of the box */
+  height: 180px; /* Maintain the aspect ratio */
+  border-radius: 5px; /* Add some border radius to the images */
+}
+
+
+
+.image-link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden; /* Hide any content that might overflow from the circle */
+}
+
+.image-link img {
+  display: block;
+  
+  height: auto;
+  transition: box-shadow 0.3s ease-in-out;
+  width: 150px; /* Adjust the size as needed */
+}
+
+.image-link::before {
+  border-radius: inherit; /* Match the circular shape */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  opacity: 0;
+  
+}
+
+.image-link:hover img {
+  transform: scale(1.0); /* Add a slight zoom effect on hover (5% zoom) */
+}
+.image-link:hover::before {
+  opacity: 1;
+}
+.row2 {
+  display: flex;
+}
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 66vh;
+  margin: 0;
+}
+.container2 .col-3 {
+  width: 180px;
+  height: 250px;
+  margin: 10px; /* Add margin between image boxes */
+  padding: 20px;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container2 .col-3 img {
+  width: 200px; /* Make the image occupy the full width of the box */
+  height: 180px; /* Maintain the aspect ratio */
+  border-radius: 5px; /* Add some border radius to the images */
+}
+/* Par défaut, une étoile est en gris,
+ avec un padding et un curseur en forme de main. */
+.image-caption{
+justify-content: center;
+color:bisque;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.fa-star {
+color: gray;
+cursor: pointer;
+padding: 0.0625rem;
+}
+/* Si elle porte en plus la classe '.gold', elle sera en jaune. */
+.fa-star.gold {
+color: #ffdc0f;
+}
+
+/* Le parent global '.rating' positionne le groupe des étoiles et le lien en colonne */
+.rating {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+/* Le groupe '.stars' positionne les étoiles
+   les unes à côté des autres sans espacements. */
+.stars {
+  display: inline-flex;
+  justify-content: center;
+  
+  font-size: 1em;
+}
+
+/**
+ * Et là opère la magie du ':hover' !
+ */
+
+/* A l'état :hover sur le parent '.rating',
+   on force TOUTES les étoiles à passer en jaune. */
+.stars:hover .fa-star {
+  color: #ffdc0f;
+}
+/* Et si la souris survole une étoile en particulier,
+   on sélectionne toutes les étoiles qui sont APRÈS celle-ci
+   grâce à l'opérateur '~' et on les force en GRIS */
+.stars .fa-star:hover ~ .fa-star {
+  color: gray;
+}
+
+/******************************************************************/
+/* style pour la démo */
+html { margin-top: 2em; text-align: center; font-family: 'Droid Sans', sans-serif; font-size: 1.4rem; }
+a { color: crimson; font-weight: 600; transition: all 0.8s cubic-bezier(.14,1.36,.5,.88); display: inline-block; }
+a:hover { transform: scale(1.3) }
+/******************************************************************/

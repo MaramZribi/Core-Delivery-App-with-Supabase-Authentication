@@ -1,0 +1,23 @@
+<div class="container">
+    <form action="action_page.php">
+  
+      <label for="fname">First Name</label>
+      <input [(ngModel)]="user.name" id="fname" type="text" class="form-control mt-1" formControlName="username" placeholder="Your name.."  required>
+      <label for="lname">Last Name</label>
+ 
+      <input [(ngModel)]="user.name" id="lname" type="text" class="form-control mt-1" formControlName="lastname" placeholder="Your last name.." required>
+
+      <label for="country">Country</label>
+      <select id="country" name="country" required>
+      
+        <option *ngFor="let item of countries"   >{{item}}</option>
+      
+      </select>
+  
+      <label for="subject">Subject</label>
+      <textarea [(ngModel)]="user.subject"  id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+     
+      <input (click)="ajout()" type="submit" value="Submit">
+  
+    </form>
+  </div>

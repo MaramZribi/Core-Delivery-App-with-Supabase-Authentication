@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="./cart.component.css">
+
+<div class="col-25">
+    <div class="container">
+      <h2 style="color:aliceblue">Cart <span class="price" style="color:aliceblue"><i class="fa fa-shopping-cart"></i> <b>2</b></span></h2>
+      <div class="card-table">
+             <div class="card-product">
+              <table class="table table-reponsive">
+                <thead>
+                  <tr>
+                    <th>Num</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Breaded Cutlet Dish  </td>
+                    <td>18 DT</td>
+                    <td>1</td>
+                    <td>18 DT</td>
+                    <td><button class="btn btn-danger">Delete</button></td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>2</td>
+                    <td>Kafttaji Dish   </td>
+                    <td>5.800 DT</td>
+                    <td>1</td>
+                    <td>5.800 DT</td>
+                    <td><button class="btn btn-danger">Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+       </div>
+
+    
+  </div>
+<ng-container *ngIf="false">
+  <div class="col-25">
+    <div class="container">
+      <h2 style="color:aliceblue">Cart <span class="price" style="color:aliceblue"><i class="fa fa-shopping-cart"></i> <b>0</b></span></h2>
+      <h4 style="color:aliceblue">Your cart is empty</h4>
+       <h3 style="color:aliceblue">Add item to it now</h3>
+      <!--<p><a href="#">Product 1</a> <span class="price">$15</span></p>
+      <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+      <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+      <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+            <hr>
+      <h4 style="color:aliceblue">Total <span class="price" style="color:antiquewhite"><b>$30</b></span></h4> -->
+      <input type="submit" routerLink="/home" value="Shop Now" class="btn">
+    </div>
+
+    
+  </div>
+</ng-container>

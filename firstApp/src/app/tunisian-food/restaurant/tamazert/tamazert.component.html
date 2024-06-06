@@ -1,0 +1,344 @@
+<title>Pizza</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="./tamazert.component.css">
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+</style>
+
+<!-- Start Content -->
+<div id="home" class="w3-content">
+
+<!-- Menu -->
+<div id="menu" class="w3-container w3-black w3-large w3-padding-64">
+<h1 class="w3-center w3-jumbo w3-padding-32">THE MENU</h1>
+<div class="w3-row w3-center w3-border w3-border-dark-grey">
+<a><div class="w3-third w3-padding-large w3-red"> Tacos</div></a>
+<a ><div class="w3-third w3-padding-large w3-hover-red">Snacks</div></a>
+<a ><div class="w3-third w3-padding-large w3-hover-red">Drinks</div></a>
+</div>
+
+<div id="Dishes" class="w3-container w3-white w3-padding-32">
+    <h1>
+        <b>Ground Meat Tacos</b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial"><select id="size" name="size" [(ngModel)]="selectedSize">
+          <option value="" disabled selected hidden>Choose your Tacos's size</option>  
+          <option *ngFor="let item of Margherita" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+            <ng-container [ngSwitch]="selectedSize">
+            <ng-container *ngSwitchCase="'L'">
+              <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice1('L') }}</span>
+            </ng-container>
+            <ng-container *ngSwitchCase="'XL'">
+              <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice1('XL') }}</span>
+            </ng-container>
+           </ng-container>
+          </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/q_auto,f_auto/Products/zcbrslb34l0raql88fdb" alt="Image" width="250px">
+        </div>
+      </h1>
+      <p class="w3-text-grey">Ground Meat Tacos - Served with Fries</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+      <hr>
+      <h1>
+        <b>
+            Grilled Chicken Tacos</b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial">
+          <select id="size" name="size" [(ngModel)]="selectedSize">
+            <option value="" disabled selected hidden>Choose your Tacos's size</option> 
+            <option *ngFor="let item of Formaggio" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+            
+                <ng-container [ngSwitch]="selectedSize">
+                  <ng-container *ngSwitchCase="'L'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('L') }}</span>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'XL'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('XL') }}</span>
+                  </ng-container>
+                 
+                </ng-container>
+      
+        </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/q_auto,f_auto/Products/fchgiixxtvu9vh1gbuom" alt="Image" width="250px">
+        </div>
+      </h1>
+      <p class="w3-text-grey">Grilled Chicken Tacos - Served with Fries</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+    <hr>
+    <h1>
+        <b>
+            Breaded Chicken Tacos</b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial">
+          <select id="size" name="size" [(ngModel)]="selectedSize">
+            <option value="" disabled selected hidden>Choose your Tacos's size</option> 
+            <option *ngFor="let item of Chicken" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+           
+                <ng-container [ngSwitch]="selectedSize">
+                  <ng-container *ngSwitchCase="'L'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('L') }}</span>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'XL'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('XL') }}</span>
+                  </ng-container>
+                 
+                </ng-container>
+
+        </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/q_auto,f_auto/Products/aavp15spdxarv7w1nano" alt="Image" width="250px" height="200px">
+        </div>
+      </h1>
+      <p class="w3-text-grey"> Breaded Chicken Tacos- Served with Fries</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+    <hr>
+
+    <h1>
+        <b>Big Mix Tacos </b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial">
+          <select id="size" name="size" [(ngModel)]="selectedSize">
+            <option value="" disabled selected hidden>Choose your Tacos's size</option> 
+            <option *ngFor="let item of Pineapple" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+               <ng-container [ngSwitch]="selectedSize">
+                  <ng-container *ngSwitchCase="'L'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice4('L') }}</span>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'XL'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice4('XL') }}</span>
+                  </ng-container>
+                 
+                </ng-container>
+            </span>
+        
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/q_auto,f_auto/Products/utseiieqerw6ashrq5uq" alt="Image" width="250px">
+        </div>
+      </h1>
+      <p class="w3-text-grey">Big Mix Tacos - Served with Fries</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+    <hr>
+    
+    <h1>
+        <b>Crispy Pesto Tacos </b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial">
+          <select id="size" name="size" [(ngModel)]="selectedSize">
+            <option value="" disabled selected hidden>Choose your Tacos's size</option> 
+            <option *ngFor="let item of Meat" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+          
+                <ng-container [ngSwitch]="selectedSize">
+                  <ng-container *ngSwitchCase="'L'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice5('L') }}</span>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'XL'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice5('XL') }}</span>
+                  </ng-container>
+                 
+                </ng-container>
+
+        </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/q_auto,f_auto/Products/x4aoudbppksoetvesyml" alt="Image" width="250px">
+        </div>
+      </h1>
+      <p class="w3-text-grey">Crispy Pesto Tacos - Served with Fries</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+  
+    
+</div>
+
+    
+    <h1 id="pasta" class="w3-center w3-jumbo w3-padding-32">Snacks</h1>
+    <div class="w3-container w3-white w3-padding-32">
+      <h1>
+        <b>Big Mix - 18 pieces </b> &nbsp;
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+          <span class="w3-right w3-tag w3-dark-grey w3-round">12,500 DT</span>
+        </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/q_auto,f_auto/Products/sij4u2rtp0u1rkvuvp91" alt="Image" width="250px">
+        </div>
+      </h1>
+      <p class="w3-text-grey">6 Poppers, 6 nuggets, 6 fingers</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+     <hr>
+    
+     <h1>
+      <b>Fingers - 6 pieces </b> &nbsp;
+      <span class="w3-right w3-tag w3-dark-grey w3-round">
+        <span class="w3-right w3-tag w3-dark-grey w3-round">7,000 DT</span>
+      </span>
+      <div class="image-container">
+        <hr style="flex: 1; margin: 0;">
+        <img src="https://res.cloudinary.com/glovoapp/q_auto,f_auto/Products/pnyafsqzwktqqxxxeekn" alt="Image" width="250px" height="200px">
+      </div>
+    </h1>
+    <p class="w3-text-grey">6 Pieces of  Fingers</p>
+    <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+    <br>
+        <hr>
+    <h1>
+          <b>Poppers - 6 pieces </b> &nbsp;
+          <span class="w3-right w3-tag w3-dark-grey w3-round">
+            <span class="w3-right w3-tag w3-dark-grey w3-round">6,500 DT</span>
+          </span>
+          <div class="image-container">
+            <hr style="flex: 1; margin: 0;">
+            <img src="https://res.cloudinary.com/glovoapp/f_auto,c_fill,dpr_2.0,q_auto:low,h_106,w_106,b_transparent/Products/atwtxhkawkesbcg8hxy7" alt="Image" width="250px">
+          </div>
+        </h1>
+        <p class="w3-text-grey">6 Pieces of Poppers</p>
+        <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+        <br>
+        <hr>
+    
+        <h1>
+          <b>Nuggets - 6 pieces </b> &nbsp;
+          <span class="w3-right w3-tag w3-dark-grey w3-round">
+            <span class="w3-right w3-tag w3-dark-grey w3-round">6,500 DT</span>
+          </span>
+          <div class="image-container">
+            <hr style="flex: 1; margin: 0;">
+            <img src="https://res.cloudinary.com/glovoapp/q_auto,f_auto/Products/onhoxhevraxyo7d4lflq" alt="Image" width="250px"  height="200px">
+          </div>
+        </h1>
+        <p class="w3-text-grey">6 Pieces of Nuggets</p>
+        <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+        <br>
+        <hr>
+        
+      
+    </div>
+    
+    <h1 id="starters" class="w3-center w3-jumbo w3-padding-32">Drinks</h1>
+    <div class="w3-container w3-white w3-padding-32">
+    <h1>
+        <b>Arangina </b> &nbsp;
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+          <span class="w3-right w3-tag w3-dark-grey w3-round">2,500 DT</span>
+           </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/f_auto,c_fill,dpr_2.0,q_auto:low,h_106,w_106,b_transparent/Products/qdxsmdsvlojgrjlb2ynd" alt="Image" width="250px">
+        </div>
+      </h1>
+   
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+  <hr>
+    
+  <h1>
+    <b>Coca-cola Zero </b> &nbsp;
+    <span class="w3-right w3-tag w3-dark-grey w3-round">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">2,500 DT</span>
+       </span>
+    <div class="image-container">
+      <hr style="flex: 1; margin: 0;">
+      <img src="https://res.cloudinary.com/glovoapp/f_auto,c_fill,dpr_2.0,q_auto:low,h_106,w_106,b_transparent/Products/nxnuyb9h2vqz0ohkz22t" alt="Image" width="250px">
+    </div>
+  </h1>
+
+  <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+  <br>
+   <hr>
+   <h1>
+    <b>Fanta </b> &nbsp;
+    <span class="w3-right w3-tag w3-dark-grey w3-round">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">2,500 DT</span>
+       </span>
+    <div class="image-container">
+      <hr style="flex: 1; margin: 0;">
+      <img src="https://res.cloudinary.com/glovoapp/f_auto,c_fill,dpr_2.0,q_auto:low,h_106,w_106,b_transparent/Products/apj7webnjynrglayawd0" alt="Image" width="250px">
+    </div>
+  </h1>
+
+  <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+  <br>
+<hr>
+<h1>
+  <b>Appla </b> &nbsp;
+  <span class="w3-right w3-tag w3-dark-grey w3-round">
+    <span class="w3-right w3-tag w3-dark-grey w3-round">2,500 DT</span>
+     </span>
+  <div class="image-container">
+    <hr style="flex: 1; margin: 0;">
+    <img src="https://res.cloudinary.com/glovoapp/f_auto,c_fill,dpr_2.0,q_auto:low,h_106,w_106,b_transparent/Products/hk7gywcoqjjgzu1zzhav" alt="Image" width="250px">
+  </div>
+</h1>
+
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+<br>
+<hr>
+<h1>
+  <b>Coca-Cola </b> &nbsp;
+  <span class="w3-right w3-tag w3-dark-grey w3-round">
+    <span class="w3-right w3-tag w3-dark-grey w3-round">2,500 DT</span>
+     </span>
+  <div class="image-container">
+    <hr style="flex: 1; margin: 0;">
+    <img src="https://res.cloudinary.com/glovoapp/f_auto,c_fill,dpr_2.0,q_auto:low,h_106,w_106,b_transparent/Products/e5sxdbovhgbodsawvvks" alt="Image" width="250px">
+  </div>
+</h1>
+
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+<br>
+<hr>
+<h1>
+  <b>Boga Cider </b> &nbsp;
+  <span class="w3-right w3-tag w3-dark-grey w3-round">
+    <span class="w3-right w3-tag w3-dark-grey w3-round">2,500 DT</span>
+     </span>
+  <div class="image-container">
+    <hr style="flex: 1; margin: 0;">
+    <img src="https://res.cloudinary.com/glovoapp/f_auto,c_fill,dpr_2.0,q_auto:low,h_106,w_106,b_transparent/Products/rvypm6mppknpslp6f9it" alt="Image" width="250px">
+  </div>
+</h1>
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+<br>
+<hr>
+<h1>
+  <b>Watter(1.5L) </b> &nbsp;
+  <span class="w3-right w3-tag w3-dark-grey w3-round">
+    <span class="w3-right w3-tag w3-dark-grey w3-round">1,500 DT</span>
+     </span>
+  <div class="image-container">
+    <hr style="flex: 1; margin: 0;">
+    <img src="https://res.cloudinary.com/glovoapp/f_auto,c_fill,dpr_2.0,q_auto:low,h_106,w_106,b_transparent/Products/lf4jctvglppzaoo0mpfv" alt="Image" width="250px">
+  </div>
+</h1>
+
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+<br>
+
+        
+      
+        
+    </div>
+    </div>

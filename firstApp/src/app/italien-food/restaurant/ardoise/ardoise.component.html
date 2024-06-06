@@ -1,0 +1,196 @@
+<title>Pizza</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="./ardoise.component.css">
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+</style>
+
+<!-- Start Content -->
+<div id="home" class="w3-content">
+
+<!-- Menu -->
+<div id="menu" class="w3-container w3-black w3-large w3-padding-64">
+<h1 class="w3-center w3-jumbo w3-padding-32">THE MENU</h1>
+<div class="w3-row w3-center w3-border w3-border-dark-grey">
+<a><div class="w3-third w3-padding-large w3-red">Pizza</div></a>
+<a ><div class="w3-third w3-padding-large w3-hover-red">Pasta</div></a>
+<a ><div class="w3-third w3-padding-large w3-hover-red">Starters</div></a>
+</div>
+
+<div id="pizza" class="w3-container w3-white w3-padding-32">
+
+<h1><b>Margherita</b> &nbsp; <span class="custom-select"  style="width:100px" font-family="arial"> <select id="size" name="size" [(ngModel)]="selectedSize">
+  <option value="" disabled selected hidden>Choose your Pizza's size</option> 
+  <option *ngFor="let item of Margherita" [value]="item.name">{{ item.name }}</option>
+</select>
+</span><span class="w3-right w3-tag w3-dark-grey w3-round">
+  <ng-container [ngSwitch]="selectedSize">
+    <ng-container *ngSwitchCase="'Small'">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice1('Small') }}</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Medium'">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice1('Medium') }}</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Large'">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice1('Large') }}</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Maxi'">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice1('Maxi') }}</span>
+    </ng-container>
+  </ng-container>
+</span>
+
+
+</h1>
+
+<p class="w3-text-grey">Fresh tomatoes, fresh mozzarella, fresh basil</p>
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+<br>
+<hr>
+<h1><b>Formaggio</b> &nbsp;  <span class="custom-select"  style="width:100px" font-family="arial"> <select id="size" name="size" [(ngModel)]="selectedSize">
+  <option value="" disabled selected hidden>Choose your Pizza's size</option> 
+  <option *ngFor="let item of Formaggio" [value]="item.name">{{ item.name }}</option>
+</select>
+</span><span class="w3-right w3-tag w3-dark-grey w3-round">
+  <ng-container [ngSwitch]="selectedSize">
+    <ng-container *ngSwitchCase="'Small'">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Small') }}</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Medium'">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Medium') }}</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Large'">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Large') }}</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Maxi'">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Maxi') }}</span>
+    </ng-container>
+  </ng-container>
+</span></h1>
+<p class="w3-text-grey">Four cheeses (mozzarella, parmesan, pecorino, jarlsberg)</p>
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+<br>
+<hr>
+<h1><b>Chicken</b> &nbsp; <span class="custom-select"  style="width:100px" font-family="arial"> <select id="size" name="size" [(ngModel)]="selectedSize">
+  <option value="" disabled selected hidden>Choose your Pizza's size</option> 
+
+  <option *ngFor="let item of Chicken" [value]="item.name">{{ item.name }}</option>
+
+</select>
+</span><span class="w3-right w3-tag w3-dark-grey w3-round">
+  <ng-container [ngSwitch]="selectedSize">
+    <ng-container *ngSwitchCase="'Small'">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Small') }}</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Medium'">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Medium') }}</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Large'">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Large') }}</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Maxi'">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Maxi') }}</span>
+    </ng-container>
+  </ng-container>
+</span></h1>
+<p class="w3-text-grey">Fresh tomatoes, mozzarella, chicken, onions</p>
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+<br>
+<hr>
+<h1><b>Pineapple'o'clock</b>&nbsp; <span class="custom-select"  style="width:100px" font-family="arial"> <select id="size" name="size" [(ngModel)]="selectedSize">
+  <option value="" disabled selected hidden>Choose your Pizza's size</option> 
+
+  <option *ngFor="let item of Pineapple" [value]="item.name">{{ item.name }}</option>
+</select>
+</span><span class="w3-right w3-tag w3-dark-grey w3-round">
+  <ng-container [ngSwitch]="selectedSize">
+    <ng-container *ngSwitchCase="'Small'">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice4('Small') }}</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Medium'">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice4('Medium') }}</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Large'">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice4('Large') }}</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Maxi'">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice4('Maxi') }}</span>
+    </ng-container>
+  </ng-container>
+</span></h1>
+<p class="w3-text-grey">Fresh tomatoes, mozzarella, fresh pineapple, bacon, fresh basil</p>
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+<br>
+<hr>
+<h1><b>Meat Town</b>&nbsp;  <span class="w3-tag w3-red w3-round">Hot!</span>
+  <span class="custom-select"  style="width:100px" font-family="arial"> <select id="size" name="size" [(ngModel)]="selectedSize">
+    <option value="" disabled selected hidden>Choose your Pizza's size</option> 
+
+    <option *ngFor="let item of Meat" [value]="item.name">{{ item.name }}</option>
+  </select>
+  </span><span class="w3-right w3-tag w3-dark-grey w3-round">
+    <ng-container [ngSwitch]="selectedSize">
+      <ng-container *ngSwitchCase="'Small'">
+        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice5('Small') }}</span>
+      </ng-container>
+      <ng-container *ngSwitchCase="'Medium'">
+        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice5('Medium') }}</span>
+      </ng-container>
+      <ng-container *ngSwitchCase="'Large'">
+        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice5('Large') }}</span>
+      </ng-container>
+      <ng-container *ngSwitchCase="'Maxi'">
+        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice5('Maxi') }}</span>
+      </ng-container>
+    </ng-container>
+  </span></h1>
+<p class="w3-text-grey">Fresh tomatoes, mozzarella, hot pepporoni, hot sausage, beef, chicken</p>
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+<br>
+</div>
+
+<h1 id="pasta" class="w3-center w3-jumbo w3-padding-32">PASTA</h1>
+<div class="w3-container w3-white w3-padding-32">
+
+<h1><b>Lasagna</b> <span class="w3-tag w3-grey w3-round">Popular</span>
+<span class="w3-right w3-tag w3-dark-grey w3-round">13DT</span></h1>
+<p class="w3-text-grey">Special sauce, mozzarella, parmesan, ground beef</p>
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+<br>
+<hr>
+<h1><b>Ravioli</b> <span class="w3-right w3-tag w3-dark-grey w3-round">14 DT</span></h1>
+<p class="w3-text-grey">Ravioli filled with cheese</p>
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+<br>
+<hr>
+<h1><b>Spaghetti Classica</b> <span class="w3-right w3-tag w3-dark-grey w3-round">11 DT</span></h1>
+<p class="w3-text-grey">Fresh tomatoes, onions, ground beef</p>
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+<br>
+</div>
+
+<h1 id="starters" class="w3-center w3-jumbo w3-padding-32">STARTERS</h1>
+<div class="w3-container w3-white w3-padding-32">
+
+<h1><b>Today's Soup</b> <span class="w3-tag w3-grey w3-round">Seasonal</span>
+<span class="w3-right w3-tag w3-dark-grey w3-round">5 DT</span></h1>
+<p class="w3-text-grey">Ask the waiter</p>
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+<br>
+<hr>
+<h1><b>Bruschetta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">8 DT</span></h1>
+<p class="w3-text-grey">Bread with pesto, tomatoes, onion, garlic</p>
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+<br>
+<hr>
+<h1><b>Garlic bread</b> <span class="w3-right w3-tag w3-dark-grey w3-round">9 DT</span></h1>
+<p class="w3-text-grey">Grilled ciabatta, garlic butter, onions</p>
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+<br>
+</div>
+</div>
+
+<!-- End Content -->
+</div>

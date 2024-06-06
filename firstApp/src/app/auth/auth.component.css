@@ -1,0 +1,68 @@
+/* Add this CSS to style your new HTML */
+.container {
+  width: 400px; /* Set the desired width of the container */
+  margin: 0 auto;
+  margin-top: 20vh; /* Adjust the margin-top value to position the box vertically */
+  padding: 20px;
+  margin-top: 20vh;
+  background-color: tomato;
+  border: 1px solid tomato;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.row.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+  }
+  
+  .form-widget {
+    width: 400px;
+    padding: 20px;
+    background-color: tomato;
+    border: 1px solid tomato;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .header {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    margin-bottom: 20px;
+  }
+  
+  .inputField {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    background-color: #04AA6D;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color:  #04AA6D;
+  }
+  
+  /* Media query for small screens */
+  @media screen and (max-width: 300px) {
+    .form-widget {
+      width: 100%;
+    }
+  }
+  

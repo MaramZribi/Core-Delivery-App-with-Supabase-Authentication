@@ -1,0 +1,786 @@
+<title>Pizza</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="./joseph.component.css">
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+</style>
+
+<!-- Start Content -->
+<div id="home" class="w3-content">
+
+<!-- Menu -->
+<div id="menu" class="w3-container w3-black w3-large w3-padding-64">
+<h1 class="w3-center w3-jumbo w3-padding-32">THE MENU</h1>
+<div class="w3-row w3-center w3-border w3-border-dark-grey">
+<a><div class="w3-third w3-padding-large w3-red"> Our Meats</div></a>
+<a ><div class="w3-third w3-padding-large w3-hover-red"> Our Fishes</div></a>
+<a ><div class="w3-third w3-padding-large w3-hover-red">Our Poultry</div></a>
+<a ><div class="w3-third w3-padding-large w3-hover-red">Our Dishes</div></a>
+<a ><div class="w3-third w3-padding-large w3-hover-red">Our Starters</div></a>
+<a ><div class="w3-third w3-padding-large w3-hover-red">Our Drinks</div></a>
+</div>
+
+
+<div id="Dishes" class="w3-container w3-white w3-padding-32">
+    <h1>
+        <b>Mixed Grill</b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial" aria-placeholder="choose"><select id="size" name="size" [(ngModel)]="selectedSize" >
+            <option value="" disabled selected hidden>Choose an Accompaniement</option>
+            <option *ngFor="let item of Margherita" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+            <ng-container [ngSwitch]="selectedSize"  >
+            <ng-container *ngSwitchCase="'Tastira'">
+              <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice1('Tastira') }}</span>
+            </ng-container>
+            <ng-container *ngSwitchCase="'Spaghetti'">
+              <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice1('Spaghetti') }}</span>
+            </ng-container>
+            <ng-container *ngSwitchCase="'Rice'">
+                <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice1('Rice') }}</span>
+              </ng-container>
+              <ng-container *ngSwitchCase="'Salad'">
+                <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice1('Salad') }}</span>
+              </ng-container>
+           </ng-container>
+          </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/i9p9xlabklfjfwccqnum" alt="Image" width="250px">
+        </div>
+      </h1>
+      <p class="w3-text-grey">Lamb Chop, Liver, Merguez, Escalope</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+      <hr>
+      <h1>
+        <b>
+            Beef Tenderloin Skewer</b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial">
+          <select id="size" name="size" [(ngModel)]="selectedSize">
+            <option value="" disabled selected hidden>Choose an Accompaniement</option>
+            <option *ngFor="let item of Formaggio" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+            
+                <ng-container [ngSwitch]="selectedSize">
+                    <ng-container *ngSwitchCase="'Tastira'">
+                        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Tastira') }}</span>
+                      </ng-container>
+                      <ng-container *ngSwitchCase="'Spaghetti'">
+                        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Spaghetti') }}</span>
+                      </ng-container>
+                      <ng-container *ngSwitchCase="'Rice'">
+                          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Rice') }}</span>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'Salad'">
+                          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Salad') }}</span>
+                        </ng-container>
+                </ng-container>
+      
+        </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/lwt6b4lsd0wjksutxvea" alt="Image" width="250px">
+        </div>
+      </h1>
+      <p class="w3-text-grey">Garnish of your choice</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+    <hr>
+    <h1>
+        <b>
+        
+Grilled Beef Tenderloin</b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial">
+          <select id="size" name="size" [(ngModel)]="selectedSize">
+            <option value="" disabled selected hidden>Choose an Accompaniement</option>
+            <option *ngFor="let item of Chicken" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+           
+                <ng-container [ngSwitch]="selectedSize">
+                    <ng-container *ngSwitchCase="'Tastira'">
+                        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Tastira') }}</span>
+                      </ng-container>
+                      <ng-container *ngSwitchCase="'Spaghetti'">
+                        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Spaghetti') }}</span>
+                      </ng-container>
+                      <ng-container *ngSwitchCase="'Rice'">
+                          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Rice') }}</span>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'Salad'">
+                          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Salad') }}</span>
+                        </ng-container>
+                </ng-container>
+
+        </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/qommvjiwq71pzk5hpnkt" alt="Image" width="250px" height="200px">
+        </div>
+      </h1>
+      <p class="w3-text-grey"> Garnish of your choice</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+    <hr>
+
+    <h1>
+        <b>
+            Fillet with Mushroom Sauce</b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial">
+          <select id="size" name="size" [(ngModel)]="selectedSize">
+            <option value="" disabled selected hidden>Choose an Accompaniement</option>
+            <option *ngFor="let item of Pineapple" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+               <ng-container [ngSwitch]="selectedSize">
+                <ng-container *ngSwitchCase="'Tastira'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice4('Tastira') }}</span>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'Spaghetti'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice4('Spaghetti') }}</span>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'Rice'">
+                      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice4('Rice') }}</span>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'Salad'">
+                      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice4('Salad') }}</span>
+                    </ng-container>
+                 
+                </ng-container>
+            </span>
+        
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/i0aozbseaul1f9quxzl7" alt="Image" width="250px">
+        </div>
+      </h1>
+      <p class="w3-text-grey"> Garnish of your choice</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+    <hr>
+    
+    <h1>
+        <b>
+            Filet Roquefort Sauce </b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial">
+          <select id="size" name="size" [(ngModel)]="selectedSize">
+            <option value="" disabled selected hidden>Choose an Accompaniement</option>
+            <option *ngFor="let item of Meat" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+          
+                <ng-container [ngSwitch]="selectedSize">
+                    <ng-container *ngSwitchCase="'Tastira'">
+                        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice5('Tastira') }}</span>
+                      </ng-container>
+                      <ng-container *ngSwitchCase="'Spaghetti'">
+                        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice5('Spaghetti') }}</span>
+                      </ng-container>
+                      <ng-container *ngSwitchCase="'Rice'">
+                          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice5('Rice') }}</span>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'Salad'">
+                          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice5('Salad') }}</span>
+                        </ng-container>
+                 
+                </ng-container>
+
+        </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/nfplpjo5cf0xxrqruab5" alt="Image" width="250px">
+        </div>
+      </h1>
+      <p class="w3-text-grey"> Garnish of your choice</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+  
+    
+</div>
+<h1 id="starters" class="w3-center w3-jumbo w3-padding-32">FISHES</h1>
+<div id="Dishes" class="w3-container w3-white w3-padding-32">
+    <h1>
+        <b>Grilled Sea Bass</b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial"><select id="size" name="size" [(ngModel)]="selectedSize">
+            <option value="" disabled selected hidden>Choose an Accompaniement</option>
+             <option *ngFor="let item of Formaggio" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+            <ng-container [ngSwitch]="selectedSize">
+                <ng-container *ngSwitchCase="'Tastira'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Tastira') }}</span>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'Spaghetti'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Spaghetti') }}</span>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'Rice'">
+                      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Rice') }}</span>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'Salad'">
+                      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Salad') }}</span>
+                    </ng-container>
+           </ng-container>
+          </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/pztzqnzq7zorrxdl2o27" alt="Image" width="250px">
+        </div>
+      </h1>
+      <p class="w3-text-grey"> Garnish of your choice- Served with Fries</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+      <hr>
+      <h1>
+        <b>
+        
+Grilled sea bream</b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial">
+          <select id="size" name="size" [(ngModel)]="selectedSize">
+            <option value="" disabled selected hidden>Choose an Accompaniement</option>
+            <option *ngFor="let item of Formaggio" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+            
+                <ng-container [ngSwitch]="selectedSize">
+                    <ng-container *ngSwitchCase="'Tastira'">
+                        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Tastira') }}</span>
+                      </ng-container>
+                      <ng-container *ngSwitchCase="'Spaghetti'">
+                        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Spaghetti') }}</span>
+                      </ng-container>
+                      <ng-container *ngSwitchCase="'Rice'">
+                          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Rice') }}</span>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'Salad'">
+                          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Salad') }}</span>
+                        </ng-container>
+                 
+                </ng-container>
+      
+        </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/bhsqel8pfnyzgv4v1g5s" alt="Image" width="250px">
+        </div>
+      </h1>
+      <p class="w3-text-grey"> Garnish of your choice-Served with Fries</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+    <hr>
+    <h1>
+        <b>
+         
+Breaded Shrimp</b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial">
+          <select id="size" name="size" [(ngModel)]="selectedSize">
+            <option value="" disabled selected hidden>Choose an Accompaniement</option>
+            <option *ngFor="let item of Formaggio" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+           
+                <ng-container [ngSwitch]="selectedSize">
+                    <ng-container *ngSwitchCase="'Tastira'">
+                        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Tastira') }}</span>
+                      </ng-container>
+                      <ng-container *ngSwitchCase="'Spaghetti'">
+                        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Spaghetti') }}</span>
+                      </ng-container>
+                      <ng-container *ngSwitchCase="'Rice'">
+                          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Rice') }}</span>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'Salad'">
+                          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Salad') }}</span>
+                        </ng-container>
+                </ng-container>
+
+        </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/mokx1mkopst6wpxcgoxe" alt="Image" width="250px" height="200px">
+        </div>
+      </h1>
+      <p class="w3-text-grey">  Garnish of your choice-Served with Fries</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+    <hr>
+
+    <h1>
+        <b>
+            Grilled King Prawn </b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial">
+          <select id="size" name="size" [(ngModel)]="selectedSize">
+            <option value="" disabled selected hidden>Choose an Accompaniement</option>
+            <option *ngFor="let item of Formaggio" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+               <ng-container [ngSwitch]="selectedSize">
+                <ng-container *ngSwitchCase="'Tastira'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Tastira') }}</span>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'Spaghetti'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Spaghetti') }}</span>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'Rice'">
+                      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Rice') }}</span>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'Salad'">
+                      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Salad') }}</span>
+                    </ng-container>
+                 
+                </ng-container>
+            </span>
+        
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/npubzupyz3vekblx4pq4" alt="Image" width="250px">
+        </div>
+      </h1>
+      <p class="w3-text-grey"> Garnish of your choice-Served with Fries</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+    <hr>
+    
+   
+  
+    
+</div>
+<h1 id="starters" class="w3-center w3-jumbo w3-padding-32">POULTRY</h1>
+<div id="Dishes" class="w3-container w3-white w3-padding-32">
+    <h1>
+        <b>
+            Roasted Chicken Leg Au Gratin</b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial"><select id="size" name="size" [(ngModel)]="selectedSize">
+            <option value="" disabled selected hidden>Choose an Accompaniement</option>
+             <option *ngFor="let item of Formaggio" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+            <ng-container [ngSwitch]="selectedSize">
+                <ng-container *ngSwitchCase="'Tastira'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Tastira') }}</span>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'Spaghetti'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Spaghetti') }}</span>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'Rice'">
+                      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Rice') }}</span>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'Salad'">
+                      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Salad') }}</span>
+                    </ng-container>
+           </ng-container>
+          </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/y7minr3oealamg8pjdq2" alt="Image" width="250px">
+        </div>
+      </h1>
+      <p class="w3-text-grey"> Garnish of your choice- Served with Fries</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+      <hr>
+      <h1>
+        <b>
+        
+
+            Grilled Chicken Leg</b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial">
+          <select id="size" name="size" [(ngModel)]="selectedSize">
+            <option value="" disabled selected hidden>Choose an Accompaniement</option>
+            <option *ngFor="let item of Formaggio" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+            
+                <ng-container [ngSwitch]="selectedSize">
+                    <ng-container *ngSwitchCase="'Tastira'">
+                        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Tastira') }}</span>
+                      </ng-container>
+                      <ng-container *ngSwitchCase="'Spaghetti'">
+                        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Spaghetti') }}</span>
+                      </ng-container>
+                      <ng-container *ngSwitchCase="'Rice'">
+                          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Rice') }}</span>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'Salad'">
+                          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice2('Salad') }}</span>
+                        </ng-container>
+                 
+                </ng-container>
+      
+        </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/ymxvhutuosqugca6ugut" alt="Image" width="250px">
+        </div>
+      </h1>
+      <p class="w3-text-grey"> Garnish of your choice-Served with Fries</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+    <hr>
+    <h1>
+        <b>
+         
+
+            Chicken with Mushroom Sauce</b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial">
+          <select id="size" name="size" [(ngModel)]="selectedSize">
+            <option value="" disabled selected hidden>Choose an Accompaniement</option>
+            <option *ngFor="let item of Formaggio" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+           
+                <ng-container [ngSwitch]="selectedSize">
+                    <ng-container *ngSwitchCase="'Tastira'">
+                        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Tastira') }}</span>
+                      </ng-container>
+                      <ng-container *ngSwitchCase="'Spaghetti'">
+                        <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Spaghetti') }}</span>
+                      </ng-container>
+                      <ng-container *ngSwitchCase="'Rice'">
+                          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Rice') }}</span>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'Salad'">
+                          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Salad') }}</span>
+                        </ng-container>
+                </ng-container>
+
+        </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/pzojifzixplvobnzrxip" alt="Image" width="250px" height="200px">
+        </div>
+      </h1>
+      <p class="w3-text-grey">  Garnish of your choice-Served with Fries</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+    <hr>
+
+    <h1>
+        <b>
+           
+Grilled Chicken Skewer</b> &nbsp;
+        <span class="custom-select" style="width: 100px" font-family="arial">
+          <select id="size" name="size" [(ngModel)]="selectedSize">
+            <option value="" disabled selected hidden>Choose an Accompaniement</option>
+            <option *ngFor="let item of Formaggio" [value]="item.name">{{ item.name }}</option>
+          </select>
+        </span>
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+               <ng-container [ngSwitch]="selectedSize">
+                <ng-container *ngSwitchCase="'Tastira'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Tastira') }}</span>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'Spaghetti'">
+                    <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Spaghetti') }}</span>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'Rice'">
+                      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Rice') }}</span>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'Salad'">
+                      <span class="w3-right w3-tag w3-dark-grey w3-round">{{ getItemPrice3('Salad') }}</span>
+                    </ng-container>
+                 
+                </ng-container>
+            </span>
+        
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/ykujncit2mmig0ovcyu6" alt="Image" width="250px">
+        </div>
+      </h1>
+      <p class="w3-text-grey"> Garnish of your choice-Served with Fries</p>
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+    <hr>
+    
+   
+  
+    
+</div>
+<h1 id="starters" class="w3-center w3-jumbo w3-padding-32">DISHES</h1>
+<div id="Dishes" class="w3-container w3-white w3-padding-32">
+    <h1>
+        <b> Lamb Couscous</b>
+            &nbsp;
+            <span class="w3-right w3-tag w3-dark-grey w3-round">18 DT</span>
+            <div style="display: flex; align-items: left;">
+                <img src="https://res.cloudinary.com/glovoapp/q_auto,f_auto/Products/f4wpienvgfghujfx4oxj" alt="Image" width="250px" style="float: right; margin-left: 10px;">
+                <hr style="flex: 1; margin: 0;">
+            </div>
+    </h1>
+    <p class="w3-text-grey">Tunisian specialty    </p>
+    <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+    <br>
+    <hr>
+
+    <h1>
+        <b> Chicken Couscous</b>
+        &nbsp;
+        <span class="w3-right w3-tag w3-dark-grey w3-round">16 DT</span>
+        <div style="display: flex; align-items: left;">
+            <img src="https://res.cloudinary.com/glovoapp/q_auto,f_auto/Products/k1wneirplmcwibjnyrrx" alt="Image" width="250px" style="float: right; margin-left: 10px;">
+            <hr style="flex: 1; margin: 0;">
+        </div>
+    </h1>
+    <p class="w3-text-grey">Tunisian specialty    </p>
+    <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+    <br>
+    <hr>
+
+    <h1>
+        <b>Fish Couscous</b>
+        &nbsp;
+        <span class="w3-right w3-tag w3-dark-grey w3-round">18 DT</span>
+        <div style="display: flex; align-items: left;">
+            <img src="https://res.cloudinary.com/glovoapp/q_auto,f_auto/Products/ylzgbg5r1oaf2ecwj5ba" alt="Image" width="250px" style="float: right; margin-left: 10px;">
+            <hr style="flex: 1; margin: 0;">
+        </div>
+    </h1>
+    <p class="w3-text-grey">Tunisian specialty    </p>
+    <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+    <br>
+    <hr>
+
+    <h1>
+        <b>Koucha Lamb</b>
+        &nbsp;
+        <span class="w3-right w3-tag w3-dark-grey w3-round">13 DT</span>
+        <div style="display: flex; align-items: left;">
+            <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/tlzkm5qewydjavtv8uyc" alt="Image" width="250px" style="float: right; margin-left: 10px;">
+            <hr style="flex: 1; margin: 0;">
+        </div>
+    </h1>
+    <p class="w3-text-grey">Lamb,potatos,pepper.. </p>
+    <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+    <br>
+    <hr>
+    
+    <h1>
+        <b>
+            
+Madfouna Dumpling And Hargma</b> 
+        &nbsp;
+        <span class="w3-right w3-tag w3-dark-grey w3-round">10 DT</span>
+        <div style="display: flex; align-items: left;">
+            <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/exsx39gvtggice1d7jjn" alt="Image" width="250px" style="float: right; margin-left: 10px;">
+            <hr style="flex: 1; margin: 0;">
+        </div>
+    </h1>
+    <p class="w3-text-grey">Tunisian specialty</p>
+    <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+    <br>
+    <hr>
+    <h1>
+        <b>
+            Madfouna Just Dumpling</b>
+        &nbsp;
+        <span class="w3-right w3-tag w3-dark-grey w3-round">12 DT</span>
+        <div style="display: flex; align-items: left;">
+            <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/rjvtmjxz8dokk0affy3l" alt="Image" width="250px" style="float: right; margin-left: 10px;">
+            <hr style="flex: 1; margin: 0;">
+        </div>
+    </h1>
+    <p class="w3-text-grey">Tunisian specialty</p>
+    <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+    <br>
+    <hr>
+    
+    <h1>
+        <b> Mloukhia</b>&nbsp;
+        <span class="w3-right w3-tag w3-dark-grey w3-round">12 DT</span>
+        <div style="display: flex; align-items: left;">
+            <img src="https://cuisine.nessma.tv/uploads/1/2019-06/73041d0b6465e5ca8d59cf958aab5333.jpg" alt="Image" width="250px" style="float: right; margin-left: 10px;">
+            <hr style="flex: 1; margin: 0;">
+        </div>
+    </h1>
+    <p class="w3-text-grey">Tunisian specialty</p>
+    <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+<br>
+    
+</div>
+
+    
+   
+    
+    <h1 id="starters" class="w3-center w3-jumbo w3-padding-32">STARTERS</h1>
+    <div class="w3-container w3-white w3-padding-32">
+    
+        <h1>
+            <b>Green Salad</b>
+                &nbsp;
+                <span class="w3-right w3-tag w3-dark-grey w3-round">6,500 DT</span>
+                <div style="display: flex; align-items: left;">
+                    <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/jfeadkqbj9w2uv2iqhhj" alt="Image" width="250px" style="float: right; margin-left: 10px;">
+                    <hr style="flex: 1; margin: 0;">
+                </div>
+        </h1>
+        <p class="w3-text-grey">tomato sauce + hot sauce+egg+shrimp+squid+pepper</p>
+        <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+        <br>
+        <hr>
+    
+        <h1>
+            <b> Joseph Salad </b>
+            &nbsp;
+            <span class="w3-right w3-tag w3-dark-grey w3-round">7 DT</span>
+            <div style="display: flex; align-items: left;">
+                <img src="https://res.cloudinary.com/glovoapp/f_auto,c_fill,dpr_1.0,h_60,w_60,q_auto:low,b_transparent/Products/k3jb0exavluxtea28p0q" alt="Image" width="250px" style="float: right; margin-left: 10px;">
+                <hr style="flex: 1; margin: 0;">
+            </div>
+        </h1>
+        <p class="w3-text-grey">tomato sauce + hot sauce+egg+chicken+pepper</p>
+        <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+        <br>
+        <hr>
+    
+        <h1>
+            <b>Salad  Mechouia </b>
+            &nbsp;
+            <span class="w3-right w3-tag w3-dark-grey w3-round">7 DT</span>
+            <div style="display: flex; align-items: left;">
+                <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/hcqqi4ukq3mmgqxegpoi" alt="Image" width="250px" style="float: right; margin-left: 10px;">
+                <hr style="flex: 1; margin: 0;">
+            </div>
+        </h1>
+        <p class="w3-text-grey">tomato sauce + hot sauce+egg+ merguez (sausage) +pepper</p>
+        <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+        <br>
+        <hr>
+    
+        <h1>
+            <b> Tuna Brik</b>
+            &nbsp;
+            <span class="w3-right w3-tag w3-dark-grey w3-round">6 DT</span>
+            <div style="display: flex; align-items: left;">
+                <img src="https://res.cloudinary.com/glovoapp/w_600,f_auto,q_auto:low/Products/iqxbyv5bao0jqvqzkf7y" alt="Image" width="250px" style="float: right; margin-left: 10px;">
+                <hr style="flex: 1; margin: 0;">
+            </div>
+        </h1>
+        <p class="w3-text-grey">tomato sauce + hot sauce+egg+shrimp+pepper</p>
+        <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a> 
+        <br>
+        <hr>
+        
+        
+        
+    </div>
+    <h1 id="starters" class="w3-center w3-jumbo w3-padding-32">Drinks</h1>
+    <div class="w3-container w3-white w3-padding-32">
+    <h1>
+        <b>Arangina </b> &nbsp;
+        <span class="w3-right w3-tag w3-dark-grey w3-round">
+          <span class="w3-right w3-tag w3-dark-grey w3-round">2,500 DT</span>
+           </span>
+        <div class="image-container">
+          <hr style="flex: 1; margin: 0;">
+          <img src="https://res.cloudinary.com/glovoapp/f_auto,c_fill,dpr_2.0,q_auto:low,h_106,w_106,b_transparent/Products/qdxsmdsvlojgrjlb2ynd" alt="Image" width="250px">
+        </div>
+      </h1>
+   
+      <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+      <br>
+  <hr>
+    
+  <h1>
+    <b>Coca-cola Zero </b> &nbsp;
+    <span class="w3-right w3-tag w3-dark-grey w3-round">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">2,500 DT</span>
+       </span>
+    <div class="image-container">
+      <hr style="flex: 1; margin: 0;">
+      <img src="https://res.cloudinary.com/glovoapp/f_auto,c_fill,dpr_2.0,q_auto:low,h_106,w_106,b_transparent/Products/nxnuyb9h2vqz0ohkz22t" alt="Image" width="250px">
+    </div>
+  </h1>
+
+  <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+  <br>
+   <hr>
+   <h1>
+    <b>Fanta </b> &nbsp;
+    <span class="w3-right w3-tag w3-dark-grey w3-round">
+      <span class="w3-right w3-tag w3-dark-grey w3-round">2,500 DT</span>
+       </span>
+    <div class="image-container">
+      <hr style="flex: 1; margin: 0;">
+      <img src="https://res.cloudinary.com/glovoapp/f_auto,c_fill,dpr_2.0,q_auto:low,h_106,w_106,b_transparent/Products/apj7webnjynrglayawd0" alt="Image" width="250px">
+    </div>
+  </h1>
+
+  <a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+  <br>
+<hr>
+<h1>
+  <b>Appla </b> &nbsp;
+  <span class="w3-right w3-tag w3-dark-grey w3-round">
+    <span class="w3-right w3-tag w3-dark-grey w3-round">2,500 DT</span>
+     </span>
+  <div class="image-container">
+    <hr style="flex: 1; margin: 0;">
+    <img src="https://res.cloudinary.com/glovoapp/f_auto,c_fill,dpr_2.0,q_auto:low,h_106,w_106,b_transparent/Products/hk7gywcoqjjgzu1zzhav" alt="Image" width="250px">
+  </div>
+</h1>
+
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+<br>
+<hr>
+<h1>
+  <b>Coca-Cola </b> &nbsp;
+  <span class="w3-right w3-tag w3-dark-grey w3-round">
+    <span class="w3-right w3-tag w3-dark-grey w3-round">2,500 DT</span>
+     </span>
+  <div class="image-container">
+    <hr style="flex: 1; margin: 0;">
+    <img src="https://res.cloudinary.com/glovoapp/f_auto,c_fill,dpr_2.0,q_auto:low,h_106,w_106,b_transparent/Products/e5sxdbovhgbodsawvvks" alt="Image" width="250px">
+  </div>
+</h1>
+
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+<br>
+<hr>
+<h1>
+  <b>Boga Cider </b> &nbsp;
+  <span class="w3-right w3-tag w3-dark-grey w3-round">
+    <span class="w3-right w3-tag w3-dark-grey w3-round">2,500 DT</span>
+     </span>
+  <div class="image-container">
+    <hr style="flex: 1; margin: 0;">
+    <img src="https://res.cloudinary.com/glovoapp/f_auto,c_fill,dpr_2.0,q_auto:low,h_106,w_106,b_transparent/Products/rvypm6mppknpslp6f9it" alt="Image" width="250px">
+  </div>
+</h1>
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+<br>
+<hr>
+<h1>
+  <b>Watter(1.5L) </b> &nbsp;
+  <span class="w3-right w3-tag w3-dark-grey w3-round">
+    <span class="w3-right w3-tag w3-dark-grey w3-round">1,500 DT</span>
+     </span>
+  <div class="image-container">
+    <hr style="flex: 1; margin: 0;">
+    <img src="https://res.cloudinary.com/glovoapp/f_auto,c_fill,dpr_2.0,q_auto:low,h_106,w_106,b_transparent/Products/lf4jctvglppzaoo0mpfv" alt="Image" width="250px">
+  </div>
+</h1>
+
+<a href="#cart"><div class="w3-third w3-padding-large w3-black">Add to cart</div></a>
+<br>
+
+        
+      
+        
+    </div>
+    </div>
